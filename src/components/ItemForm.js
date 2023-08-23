@@ -7,7 +7,7 @@ function ItemForm({onItemFormSubmit}) {
 
   function handleItemNameOrCategoryChange(event, useName)
   {
-    //console.log("useName = " + useName);
+    console.log("useName = " + useName);
     if (useName === undefined || useName === null)
     {
       throw new Error("useName must be a defined boolean variable!");
@@ -41,6 +41,8 @@ function ItemForm({onItemFormSubmit}) {
     };
 
     onItemFormSubmit(newItem);
+    setItemName("");
+    setItemCategory("");
   }
 
   return (
@@ -52,7 +54,7 @@ function ItemForm({onItemFormSubmit}) {
 
       <label>
         Category:
-        <select name="category" value={"Produce"} onChange={handleCategoryChange}>
+        <select name="category" value={itemCategory} onChange={handleCategoryChange}>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
           <option value="Dessert">Dessert</option>
