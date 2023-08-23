@@ -10,12 +10,12 @@ function ItemForm({onItemFormSubmit}) {
     //console.log("useName = " + useName);
     if (useName === undefined || useName === null)
     {
-      throw "useName must be a defined boolean variable!";
+      throw new Error("useName must be a defined boolean variable!");
     }
     else
     {
       if (useName === true || useName === false);
-      else throw "useName must be a defined boolean variable!";
+      else throw new Error("useName must be a defined boolean variable!");
     }
 
     if (useName) setItemName(event.target.value);
